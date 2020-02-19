@@ -3,6 +3,8 @@ const bodyParser = require('body-parser')
 const store = require('./store')
 const app = express()
 
+const PORT = process.env.PORT || 7555;
+
 app.use(express.static('public'))
 
 app.use(bodyParser.json())
@@ -36,6 +38,6 @@ app.post('/createCompany', (req, res) => {
     .then(() => res.sendStatus(200))
 })
 
-app.listen(7555, () => {
-  console.log('Server running on http://localhost:7555')
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`)
 })
