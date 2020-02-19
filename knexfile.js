@@ -21,7 +21,7 @@ module.exports = {
       host: "us-cdbr-iron-east-04.cleardb.net",
       user: "b86c797258618e",
       password: "98367645",
-      database: "united_dreamers_database"
+      // database: "united_dreamers_database"
     }
   }
 }
