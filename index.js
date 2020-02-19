@@ -9,6 +9,25 @@ app.use(express.static('public'))
 
 app.use(bodyParser.json())
 
+app.use(function(req, res, next) {
+  const allowedOrigins = [
+    "http://127.0.0.1:3000",
+    "http://localhost:3000",
+    "https://julio-maldonado.github.io/UnitedDreamers/",
+    // "yeux.tech"
+  ];
+  const origin = req.headers.origin;
+  if (allowedOrigins.indexOf(origin) > -1) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+  res.header("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header("Content-Type", "application/json; charset=utf-8");
+
+  return next();
+})
+
 app.post('/createCompany', (req, res) => {
   console.log(`req = ${req}`)
   store
