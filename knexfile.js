@@ -5,6 +5,7 @@ module.exports = {
   //   password: 'password',
   //   database: 'united_dreamers_database'
   // }
+  client: 'mysql',
   development: {
     client: "mysql",
     connection: {
