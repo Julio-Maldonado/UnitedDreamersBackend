@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
+    "start": "node .",
+    "dev": "nodemon server",
+    "bootstrap": "knex migrate:latest && knex seed:run"
+  },
+  "engines": {
+    "node": "12.6.0"
   },
   "author": "",
   "license": "ISC",
