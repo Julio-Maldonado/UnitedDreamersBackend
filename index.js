@@ -89,4 +89,4 @@ const server = app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
 });
 
-server.timeout = 1000;
+server.timeout = 30000;
