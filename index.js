@@ -43,8 +43,11 @@ app.post('/createCompany', (req, res) => {
   let body = '';
 
   req.on('data', (data) => {
+    console.log(`data = ${prettyJSON(data)}`)
     body = String(data);
+    console.log(`body = ${prettyJSON(body)}`)
   });
+
   req.on('end', () => {
     console.log(`req = ${prettyJSON(req)}`)
     console.log(`req.body = ${prettyJSON(req.body)}`)
