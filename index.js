@@ -37,8 +37,9 @@ app.use(function(req, res, next) {
 
 app.post('/createCompany', (req, res) => {
   console.log(`req = ${req}`)
+  console.log(`req.body = ${req.body}`)
   for (key in req.body) {
-    console.log(req.body.key)
+    console.log(req.body['key']);
   }
   store
     .createCompany({
