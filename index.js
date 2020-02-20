@@ -35,9 +35,13 @@ app.use(function(req, res, next) {
   return next();
 })
 
+function prettyJSON(obj) {
+  console.log(JSON.stringify(obj, null, 2));
+}
+
 app.post('/createCompany', (req, res) => {
-  console.log(`req = ${req}`)
-  console.log(`req.body = ${req.body}`)
+  console.log(`req = ${prettyJSON(req)}`)
+  console.log(`req.body = ${prettyJSON(req.body)}`)
   for (key in req.body) {
     console.log(req.body['key']);
   }
