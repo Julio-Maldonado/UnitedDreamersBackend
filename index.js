@@ -37,9 +37,9 @@ app.use(function(req, res, next) {
 
 app.post('/createCompany', (req, res) => {
   console.log(`req = ${req}`)
-  req.body.forEach(item => {
-    console.log(item);
-  })
+  for (key in req.body) {
+    console.log(req.body.key)
+  }
   store
     .createCompany({
       owner_first_name: req.body.firstName,
