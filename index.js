@@ -85,6 +85,8 @@ app.post('/createCompany', (req, res) => {
     })
 })
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
-})
+});
+
+server.timeout = 1000;
