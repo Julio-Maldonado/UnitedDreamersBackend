@@ -42,7 +42,7 @@ function prettyJSON(obj) {
 app.post('/createCompany', (req, res) => {
   let body = '';
 
-  console.log(`req = ${prettyJSON(req)}`)
+  console.log('req = %j', req)
 
   req.on('data', (data) => {
     console.log(`data = ${prettyJSON(data)}`)
