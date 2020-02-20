@@ -1,13 +1,15 @@
+const cors = require('cors');
 const express = require('express')
 const bodyParser = require('body-parser')
 const store = require('./store')
-const cors = require('cors');
 
 const app = express()
 
 const PORT = process.env.PORT || 7555;
 
 app.use(express.static('public'))
+
+app.use(express.json())
 
 app.use(cors())
 
@@ -18,14 +20,14 @@ app.use(function(req, res, next) {
   const allowedOrigins = [
     "http://127.0.0.1:3000",
     "http://localhost:3000",
-    "https://julio-maldonado.github.io/UnitedDreamers/",
+    "julio-maldonado.github.io/UnitedDreamers/",
     // "yeux.tech"
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.indexOf(origin) > -1) {
     res.setHeader("Access-Control-Allow-Origin", origin);
   }
-  res.header("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.header("Access-Control-Allow-Methods", "GET, OPTIONS, POST");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.header("Access-Control-Allow-Credentials", true);
   res.header("Content-Type", "application/json; charset=utf-8");
