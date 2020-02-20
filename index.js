@@ -62,6 +62,7 @@ app.post('/createCompany', (req, res) => {
       donated_against_daca: false
     })
     .then(() => res.sendStatus(200))
+    .catch(() => res.sendStatus(400))
 })
 
 app.listen(PORT, () => {
