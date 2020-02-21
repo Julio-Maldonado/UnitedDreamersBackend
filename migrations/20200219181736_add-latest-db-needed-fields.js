@@ -23,7 +23,7 @@ exports.up = function(knex) {
     t.float('other_useful_float_metric');
     t.text('other_useful_text_metric');
 
-    t.timestamps(true, true);
+    t.timestamps(true, false);
   });
 };
 
