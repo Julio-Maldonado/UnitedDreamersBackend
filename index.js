@@ -79,8 +79,9 @@ app.post('/createCompany', (req, res) => {
       console.log('success');
       res.sendStatus(200);
     })
-    .catch(() => {
+    .catch((e) => {
       console.log('failure');
+      console.log(e);
       res.sendStatus(400)
     })
 })
