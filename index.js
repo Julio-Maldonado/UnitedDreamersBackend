@@ -75,8 +75,14 @@ app.post('/createCompany', (req, res) => {
       against_daca: false,
       donated_against_daca: false
     })
-    .then(() => res.sendStatus(200))
-    .catch(() => res.sendStatus(400))
+    .then(() => {
+      console.log('success');
+      res.sendStatus(200);
+    })
+    .catch(() => {
+      console.log('failure');
+      res.sendStatus(400)
+    })
 })
 
 const server = app.listen(PORT, () => {
