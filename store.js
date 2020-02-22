@@ -3,13 +3,13 @@ const knex = require('knex')(require('./knexfile'))
 
 module.exports = {
   createCompany({
-    // id,
     owner_first_name,
     owner_last_name,
     email_address,
     phone_number,
     company_name,
     category,
+    company_type,
     description,
     services,
     website_url,
@@ -28,30 +28,6 @@ module.exports = {
     donated_against_daca
   }) {
     console.log(`Add company ${company_name}`)
-    console.log(
-      owner_first_name,
-    owner_last_name,
-    email_address,
-    phone_number,
-    company_name,
-    category,
-    description,
-    services,
-    website_url,
-    facebook_url,
-    instagram_url,
-    twitter_url,
-    zip_code,
-    city,
-    state,
-    country,
-    company_size,
-    daca_owned,
-    support_daca,
-    signed_support_for_daca,
-    against_daca,
-    donated_against_daca
-    )
     return knex('companies').insert({
       // id,
       owner_first_name,
@@ -60,6 +36,7 @@ module.exports = {
       phone_number,
       company_name,
       category,
+      company_type,
       description,
       services,
       website_url,
@@ -76,7 +53,6 @@ module.exports = {
       signed_support_for_daca,
       against_daca,
       donated_against_daca,
-      // 'id': 0,
       'user_id': 0,
       'clicks': 0,
       'views': 0,
@@ -97,29 +73,6 @@ module.exports = {
       'other_useful_bool_metric': 0,
       'other_useful_float_metric': 0,
       'other_useful_text_metric': '',
-      // 'created_at': ,
-      // 'updated_at': ,
-      // 'owner_first_name': ,
-      // 'owner_last_name': ,
-      // 'company_name': ,
-      // 'category': ,
-      // 'description': ,
-      // 'services': ,
-      // 'phone_number': ,
-      // 'email_address': ,
-      // 'website_url': ,
-      // 'facebook_url': ,
-      // 'instagram_url': ,
-      // 'twitter_url': ,
-      // 'zip_code': ,
-      // 'city': ,
-      // 'state': ,
-      // 'daca_owned': ,
-      // 'support_daca': ,
-      // 'signed_support_for_daca': ,
-      // 'against_daca': ,
-      // 'donated_against_daca': ,
-      // 'country': )
     })
   }
 }

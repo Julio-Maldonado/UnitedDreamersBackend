@@ -58,6 +58,7 @@ app.post('/createCompany', (req, res) => {
       phone_number: req.body.phoneNumber,
       company_name: req.body.companyName,
       category: req.body.category,
+      company_type: req.body.companyType,
       description: req.body.description,
       services: req.body.services,
       website_url: req.body.companyURL,
